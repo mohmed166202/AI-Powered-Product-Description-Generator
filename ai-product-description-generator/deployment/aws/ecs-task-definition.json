@@ -1,0 +1,52 @@
+{
+  "family": "ai-product-description-generator",
+  "containerDefinitions": [
+    {
+      "name": "api",
+      "image": "your-docker-image:latest",
+      "memory": 512,
+      "cpu": 256,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8000,
+          "hostPort": 8000
+        }
+      ],
+      "environment": [
+        {
+          "name": "OPENAI_API_KEY",
+          "value": "your_openai_api_key"
+        },
+        {
+          "name": "SHOPIFY_API_KEY",
+          "value": "your_shopify_api_key"
+        },
+        {
+          "name": "WOOCOMMERCE_API_KEY",
+          "value": "your_woocommerce_api_key"
+        },
+        {
+          "name": "SALLA_API_KEY",
+          "value": "your_salla_api_key"
+        },
+        {
+          "name": "ZED_API_KEY",
+          "value": "your_zed_api_key"
+        },
+        {
+          "name": "GOOGLE_TRANSLATE_API_KEY",
+          "value": "your_google_translate_api_key"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/ai-product-description-generator",
+          "awslogs-region": "your-region",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}

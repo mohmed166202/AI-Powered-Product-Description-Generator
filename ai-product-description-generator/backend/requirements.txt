@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+openai
+transformers
+langchain
+googletrans==4.0.0-rc1
+shopifyapi
+woocommerce
+requests
+pydantic
+python-dotenv
+pytest
+httpx
+tailwindcss
